@@ -8,3 +8,6 @@ Just do `gfortran ./<x01-(x+1)00>/<number>.f90 && ./a.out` and run the executabl
 Projects are numbered in order of [Website Archives](https://projecteuler.net/archives)
 
 I chose fortran because it was designed to do Math. I wanted to learn fortran and solve Project Euler someday. Felt like a good opportunity to do both.
+
+The following resources were used to learn fortran:
+![Youtube Video](https://i.ytimg.com/vi/__2UgFNYgf8/maxresdefault.jpg)

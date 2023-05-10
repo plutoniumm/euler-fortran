@@ -1,7 +1,7 @@
-! Project Euler #004
+! Project Euler #005
 !
-program ProjectEuler004
+
+program ProjectEuler005
   implicit none
 
-
-end program ProjectEuler004
+end program ProjectEuler005
