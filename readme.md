@@ -32,30 +32,7 @@ So these are the approximate ranges for the first few star witnesses which will 
 }
 ```
 
-It is trivial to see how this may become problematic very fast since 2^N scales very fast. But the advantage is that we're not doing a^b we're doing a^b mod c. So we can use [Montgomery Modular Multiplication](https://en.wikipedia.org/wiki/Montgomery_modular_multiplication) to reduce the memory consumption of the process since it is guaranteed that for any value of a, b, c the result will be less than c. This is a very useful property since it allows us to use smaller data types to store the result of the exponentiation. Thus we can affort to use even 32 bit integers to store the result of a^b mod c for very large values of a^b as long as c is less than 2^32.
+It is trivial to see how this may become problematic very fast since $a^N$ scales very fast. This very nicely leads us into
 
-<!-- Montgomery Modular Multiplication -->
-function mod_pow(base, exponent, modulus) result(result)
-  integer, intent(in) :: base, exponent, modulus
-  integer :: result, base_pow, exp_remainder
-
-  result = 1
-  base_pow = mod(base, modulus)
-
-  do while (exponent > 0)
-    exp_remainder = mod(exponent, 2)
-
-    if (exp_remainder == 1) then
-      result = mod(result * base_pow, modulus)
-    endif
-
-    base_pow = mod(base_pow**2, modulus)
-    exponent = exponent / 2
-  end do
-end function mod_pow
-
-
-<!--miller rabin 29 with 5 -->
-29 - 1 = 28 = 2^2 * 7
-5^7 = 78125
-78125 % 29 = -1
+### Calculating Large Exponents (Modulo)
+The advantage here is that we're not doing $a^b$ we're doing $a^b \mod c$. So we can use [Fast Modular Exponentiation](https://en.wikipedia.org/wiki/Modular_exponentiation#Left-to-right_binary_method) to reduce the memory consumption since, it is guaranteed that for any value of $a, b, c$ the result $<c$. Thus we can afford to use even `Int32` to store the result of $a^b \mod c$ for very large values of $a^b$ as long as $c < 2^{32}$.

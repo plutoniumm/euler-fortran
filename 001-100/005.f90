@@ -23,14 +23,8 @@ end function gcd
 function lcm(m,n) result (l)
   implicit none
   integer, parameter :: i32 = selected_int_kind(32)
-  integer(kind=i32) gcd
+  integer(kind=i32) gcd, l
   integer(kind=i32), intent(in) :: m,n
-  integer(kind=i32) :: l
-
-  ! Method
-  !
-  ! Calculate GCD of m,n and use it to calculate LCM
-  ! LCM(m,n) = m*n/GCD(m,n)
 
   l = m*n/gcd(m,n)
 end function lcm
