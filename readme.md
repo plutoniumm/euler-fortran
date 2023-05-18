@@ -19,7 +19,7 @@ $ gfortran ./001-100/007_v2.f90 && ./a.out # Problem 007, version 2
 **List of Problems with Alternate Solutions**
 | Problem Set | Problem Number |
 | ----------- | -------------- |
-| 001-100     | 007            |
+| 001-100     | 007, 009       |
 
 The following resources were used to learn fortran: \
 ![Youtube Video](https://i.ytimg.com/vi/__2UgFNYgf8/mqdefault.jpg)
