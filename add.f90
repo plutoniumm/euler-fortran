@@ -1,7 +1,8 @@
-! Project Euler #008
+! Project Euler #009
+!
 
-program ProjectEuler008
+program ProjectEuler009
   implicit none
-  integer, parameter :: i32 = selected_int_kind(32)
 
-end program ProjectEuler008
+
+end program ProjectEuler009
