@@ -43,8 +43,6 @@ function isPrime(n) result(is)
     r = r + 1
   end do
 
-  print *, "d", d, "for n========", n
-
   ! Method
   !
   ! Express n as (2^r * d) + 1 ! basically getting rid of as much 2 as possible
@@ -52,8 +50,8 @@ function isPrime(n) result(is)
   ! pass if k = 1 (for r) or k = n - 1 (for some 0<= value < r)
   ! else
   ! check next witness (till limit) then return false
-
   do i = 1, size(w)
+    is = .false.
     witness = w(i)
     hold = mod_exp(witness, d, n)
     if (hold == 1) then
@@ -63,11 +61,9 @@ function isPrime(n) result(is)
       powers: do while (saved_r > 0)
         if (hold == n - 1) then
           is = .true. ! PROBABLY prime>>>
-          print *, "T-hold", hold, "for n", n, "witness", witness, "is", is
           exit powers
         else
           hold = mod_exp(hold,2_i32, n)
-          print *, "F-hold", hold, "for n", n, "witness", witness, "is", is
           saved_r = saved_r - 1
         end if
       end do powers
@@ -95,16 +91,13 @@ program ProjectEuler007
   ! 1. Generate odd numbers
   ! 2. Check if they are prime -> add to array
 
-  index = 311 ! check till
+  index = 10001 ! check till
   current = 3_i32 ! current number
 
-  ! 2, 3 are primes
-  do while(index > 1)
+  ! 2, 3 are primes!
+  do while(index > 2)
     if(isPrime(current)) then
       index = index - 1
-      if(current>2045) then
-        print *, current, index, "th prime"
-      end if
     end if
     current = current + 2
   end do
@@ -112,8 +105,3 @@ program ProjectEuler007
   print *, (current - 2)
 
 end program ProjectEuler007
-
-
-
-! 29 = 2^2 * 7 + 1
-! 2^7 = 128 % 29 = 12
