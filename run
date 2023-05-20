@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# convert uses to function
+getModules(){
+	cat $1 \
+	| grep use \
+	| sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' \
+	| awk -F ' ' '{print "./modules/"$2".f90"}' \
+	| paste -sd ' ' -
+}
+
+# get modules
+uses="$(getModules $1.f90)"
+
+if [ -f a.out ]; then
+	rm a.out
+fi
+
+# if modules
+if [ -n "$uses" ]; then
+	gfortran -O2 $uses ./add.f90
+	# avoid 03, it unrolls loops
+else
+	gfortran ./add.f90
+fi
+
+./a.out

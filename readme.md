@@ -7,14 +7,17 @@ I won't put in the answers here for obvious reasons. I will however put the code
 ```bash
 # problem-sets are grouped in 100s: 001-100, 101-200, etc.
 # Each problem 'number' is of format: XXX
-$ gfortran ./<problem-set>/<number>.f90 && ./a.out
+$ sh run ./<problem-set>/<number>
 
-# Example
-$ gfortran ./001-100/001.f90 && ./a.out # Problem 001
+# Examples
+$ sh run ./001-100/001 # Problem 001
 
 # Alternate solutions (if applicable) are also given with a suffix: _v2
-$ gfortran ./001-100/007_v2.f90 && ./a.out # Problem 007, version 2
+$ sh run ./001-100/007_v2 # Problem 007, version 2
 ```
+
+Don't worry about linking modules the shell script (an absolute hackjob) will do it for you as needed. Just add the `modulename.f90` file in the modules if you intend to add your own. And insert the `use modulename` in the file you want to use it in.
+
 
 **List of Problems with Alternate Solutions**
 | Problem Set | Problem Number |
