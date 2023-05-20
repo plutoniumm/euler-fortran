@@ -1,6 +1,6 @@
 ## Project Euler in Fortran
 
-![Score](https://projecteuler.net/profile/plutoniumm.png)
+![Score](https://projecteuler.net/profile/plutoniumm.png?)
 
 I won't put in the answers here for obvious reasons. I will however put the code, it should run as is. The below should run it. Solved in order of [Website Archives](https://projecteuler.net/archives)
 
@@ -46,12 +46,12 @@ So these are the approximate ranges for the first few star witnesses which will 
 }
 ```
 
-It is trivial to see how this may become problematic very fast since $a^N$ scales very fast. This very nicely leads us into
-
 > NOTE: Miller Rabin **IS NOT** faster than the normal method of generating and array of primes and checking against that. Its in fact much worse.
 > BUT.
 > 1. It let me learn about the algorithm
 > 2. Miller Rabin actually lets you check if something for an arbitrary number. You don't have to start from 0 and go to N. You can start from any number and go to N OR in fact just check N.
+
+It is trivial to see how this may become problematic very fast since $a^N$ scales very fast. This very nicely leads us into Modular Exponentiation.
 
 ### Calculating Large Exponents (Modulo)
 The advantage here is that we're not doing $a^b$ we're doing $a^b \mod c$. So we can use [Fast Modular Exponentiation](https://en.wikipedia.org/wiki/Modular_exponentiation#Left-to-right_binary_method) to reduce the memory consumption since, it is guaranteed that for any value of $a, b, c$ the result &lt;c. Thus we can afford to use even `Int32` to store the result of $a^b \mod c$ for very large values of $a^b$ as long as $c < 2^{32}$.
