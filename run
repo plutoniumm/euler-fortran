@@ -10,7 +10,11 @@ getModules(){
 }
 
 # get modules
-uses="$(getModules $1.f90)"
+if [ uses ]; then
+	uses="$(getModules $1.f90)"
+else
+	uses=""
+fi
 
 if [ -f a.out ]; then
 	rm a.out

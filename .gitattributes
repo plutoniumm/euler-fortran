@@ -1,0 +1,2 @@
+./**/*0.f90 linguist-detectable=false
+# don't count every 10th file since about 10% is boilerplate
