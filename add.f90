@@ -1,9 +1,11 @@
-! Project Euler #019
+! Project Euler #020
 !
 
-program ProjectEuler019
+program ProjectEuler020
   implicit none
-  integer :: i, value
+  integer :: i, j, value
 
+  ! Method
 
-end program ProjectEuler019
+  print *, value
+end program ProjectEuler020
