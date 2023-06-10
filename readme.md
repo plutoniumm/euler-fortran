@@ -1,7 +1,7 @@
 ## Project Euler in Fortran
 <!-- 10 may -->
 
-![Score](https://projecteuler.net/profile/plutoniumm.png?)
+![Score](https://projecteuler.net/profile/plutoniumm.png)
 
 I won't put in the answers here for obvious reasons. I will however put the code, it should run as is. The below should run it. Solved in order of [Website Archives](https://projecteuler.net/archives)
 
