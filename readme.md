@@ -35,7 +35,7 @@ In most cases to check primes I will use the [Miller-Rabin](https://en.wikipedia
 [Nice Simple Explanation by Mr H Umble Pi](https://youtu.be/_MscGSN5J6o)
 
 So these are the approximate ranges for the first few star witnesses which will perfectly test primes. [See More](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test#Testing_against_small_sets_of_bases)
-```json
+```jsx
 { // Approximations are rounded DOWN for safety
   // "max value": [star witnesses]
   "~1.3 Million": [2, 3],
